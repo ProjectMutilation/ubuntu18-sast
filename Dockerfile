@@ -13,3 +13,8 @@ RUN wget -q -O - https://files.viva64.com/etc/pubkey.txt | apt-key add - \
  && apt install -yq pvs-studio strace \
  && pvs-studio --version \
  && apt clean -yq
+RUN mkdir tmp1
+RUN cd tmp1
+RUN wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
+RUN tar -xvf go1.14.4.linux-amd64.tar.gz
+RUN mv go /usr/local
