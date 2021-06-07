@@ -22,7 +22,7 @@ RUN wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
 RUN tar -xvf go1.14.4.linux-amd64.tar.gz
 RUN mv go /usr/local
 RUN apt-get install -y unzip
-
-RUN wget https://github.com/danmar/cppcheck/archive/2.3.tar.gz && tar -xvzf 2.3.tar.gz && rm 2.3.tar.gz
-RUN cd cppcheck-2.3 && mkdir build && cd build && cmake -DUSE_MATCHCOMPILER=ON .. && cmake --build . 
-RUN mkdir /cppcheck && cp /cppcheck-2.3/build/bin/cppcheck /cppcheck/cppcheck && cp -r /cppcheck-2.3/cfg/ /cppcheck/cfg/ && rm -r cppcheck-2.3
+#install cppcheck
+RUN wget https://github.com/danmar/cppcheck/archive/2.4.1.tar.gz && tar -xvzf 2.4.1.tar.gz && rm 2.4.1.tar.gz
+RUN cd cppcheck-2.4.1 && mkdir build && cd build && cmake -DUSE_MATCHCOMPILER=ON .. && cmake --build . 
+RUN mkdir /cppcheck && cp /cppcheck-2.4.1/build/bin/cppcheck /cppcheck/cppcheck && cp -r /cppcheck-2.4.1/cfg/ /cppcheck/cfg/ && rm -r cppcheck-2.4.1
